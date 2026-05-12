@@ -46,7 +46,6 @@ const handleLogin = async () => {
     localStorage.setItem('user', JSON.stringify(res.data.user))
     
      console.log('Stored token:', localStorage.getItem('token'))
-     //localStorage.removeItem('token')
 
     alert(res.data.message || 'Login successful')
     router.push('/home')
