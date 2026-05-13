@@ -38,6 +38,8 @@ import { reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
+
 const router = useRouter()
 
 const form = reactive({
@@ -50,7 +52,7 @@ const form = reactive({
 
 const handleRegister = async () => {
   try {
-    const res = await axios.post('http://localhost:5005/api/register', {
+    const res = await axios.post(`${API_BASE}/register`, {
       username: form.username,
       email: form.email,
       phno: form.phno,

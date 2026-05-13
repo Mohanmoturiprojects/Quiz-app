@@ -27,6 +27,8 @@ import { useRouter } from 'vue-router'
 import axios from 'axios'
 import { useQuizStore } from '../Store/Quiz'
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
+
 const router = useRouter()
 const quizStore = useQuizStore()
 
@@ -47,7 +49,7 @@ const handleSubmit = async () => {
 
     try {
       await axios.post(
-        'http://localhost:5005/api/result',
+        `${API_BASE}/result`,
         quizStore.finalResult,
         {
           headers: {
